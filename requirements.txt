@@ -1,0 +1,15 @@
+3. Run examples:  
+- Pseudocode: `python -m pseudocode.gini_fairness` (tests Gini on sample DAO votes).  
+- Reflection: `python -m pseudocode.reflection_loop` (simulates 3-iter convergence).  
+- Simulations: `jupyter notebook simulations/gini_convergence.ipynb` (view plots in browser).
+
+## Usage Examples
+### Gini Fairness Computation
+Load sample data and compute:
+```python
+from pseudocode.gini_fairness import compute_gini
+import pandas as pd
+
+df = pd.read_csv('data/sample_dao_votes.csv')
+gini = compute_gini(df['votes'].tolist())
+print(f"Initial DAO Gini: {gini:.3f}")  # ~0.820
